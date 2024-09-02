@@ -651,7 +651,7 @@ function extractBenchmarkDotnetResult(output: string): BenchmarkResult[] {
     return json.Benchmarks.map((benchmark) => {
         const name = benchmark.FullName;
         const value = benchmark.Statistics.Mean;
-        const stdDev = benchmark.Statistics.StandardDeviation;
+        const stdDev = benchmark.Statistics.StandardDeviation.toFixed(2);
         const range = `± ${stdDev}`;
         return { name, value, unit: 'ns', range };
     });

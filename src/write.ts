@@ -141,6 +141,10 @@ function floatStr(n: number) {
         return n.toFixed(0);
     }
 
+    if (n > 100) {
+        return n.toFixed(0);
+    }
+
     if (n > 0.1) {
         return n.toFixed(2);
     }
@@ -149,9 +153,10 @@ function floatStr(n: number) {
 }
 
 function strVal(b: BenchmarkResult): string {
-    let s = `\`${b.value}\` ${b.unit}`;
+    let value = floatStr(b.value);
+    let s = `\`${value}\` ${b.unit}`;
     if (b.range) {
-        s += ` (\`${b.range}\`)`;
+        s += ` (\`${value}\`)`;
     }
     return s;
 }
