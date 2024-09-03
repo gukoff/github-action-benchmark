@@ -6,6 +6,7 @@
   "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "release": "tsc -p tsconfig.build.json && ncc build dist/src/index.js --license licenses.txt -o action_dist",
     "lint": "eslint '**/*.{ts,js}'",
     "fix": "eslint --fix '**/*.{ts,js}'",
     "format": "prettier -w **",
@@ -47,6 +48,7 @@
     "@types/rimraf": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "@vercel/ncc": "^0.38.1",
     "acorn": "^7.1.1",
     "cheerio": "^1.0.0-rc.3",
     "dedent": "^1.5.1",

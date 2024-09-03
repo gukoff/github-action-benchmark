@@ -82,4 +82,4 @@ inputs:
 
 runs:
   using: 'node20'
-  main: 'dist/src/index.js'
+  main: 'action_dist/index.js'
