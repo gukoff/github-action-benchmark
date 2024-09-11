@@ -153,8 +153,7 @@ function floatStr(n: number) {
 }
 
 function strVal(b: BenchmarkResult): string {
-    let value = floatStr(b.value);
-    let s = `\`${value}\` ${b.unit}`;
+    let s = `\`${floatStr(b.value)}\` ${b.unit}`;
     if (b.range) {
         s += ` (\`${b.range}\`)`;
     }
