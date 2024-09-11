@@ -1585,10 +1585,9 @@ function floatStr(n) {
     return n.toString();
 }
 function strVal(b) {
-    let value = floatStr(b.value);
-    let s = `\`${value}\` ${b.unit}`;
+    let s = `\`${floatStr(b.value)}\` ${b.unit}`;
     if (b.range) {
-        s += ` (\`${value}\`)`;
+        s += ` (\`${b.range}\`)`;
     }
     return s;
 }
